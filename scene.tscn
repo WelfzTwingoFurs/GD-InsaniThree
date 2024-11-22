@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3vfhsld27dlk"]
+
+[ext_resource type="Script" path="res://render1.gd" id="1_6m7cs"]
+[ext_resource type="Script" path="res://poly.gd" id="3_ldcim"]
+[ext_resource type="Script" path="res://sprite.gd" id="3_v744h"]
+[ext_resource type="Texture2D" uid="uid://bvw7h1oq10ygh" path="res://wallfenstein.png" id="4_y3u7i"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Camera" type="Node2D" parent="."]
+script = ExtResource("1_6m7cs")
+pos_z = 0
+metadata/_edit_group_ = true
+
+[node name="Wallfenstein" type="Sprite2D" parent="Camera"]
+visible = false
+position = Vector2(28, 45)
+texture = ExtResource("4_y3u7i")
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+
+[node name="JAKE" type="Node2D" parent="." groups=["sprite"]]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -7)
+script = ExtResource("3_v744h")
+spritepath = "res://playerr.png"
+hv_size = Vector2(10, 5)
+hv_position = Vector2(4, 3)
+scale_div = 3
+metadata/_edit_group_ = true
+
+[node name="L" type="Node2D" parent="." groups=["sprite"]]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-194, -33)
+script = ExtResource("3_v744h")
+metadata/_edit_group_ = true
+
+[node name="R" type="Node2D" parent="." groups=["sprite"]]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-94, -33)
+script = ExtResource("3_v744h")
+hv_position = null
+metadata/_edit_group_ = true
+
+[node name="floor" type="Node2D" parent="." groups=["poly"]]
+position = Vector2(-144, -18)
+script = ExtResource("3_ldcim")
+array = [Vector3(-50, -5, 0), Vector3(50, -5, 0), Vector3(50, -15, 0), Vector3(-50, -15, 0)]
+
+[node name="L2" type="Node2D" parent="." groups=["sprite"]]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-64, -27)
+script = ExtResource("3_v744h")
+scale_div = 4
+metadata/_edit_group_ = true
+
+[node name="R2" type="Node2D" parent="." groups=["sprite"]]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-24, -32)
+script = ExtResource("3_v744h")
+scale_div = 4
+metadata/_edit_group_ = true
+
+[node name="wall" type="Node2D" parent="." groups=["poly"]]
+position = Vector2(-64, -12)
+script = ExtResource("3_ldcim")
+array = [Vector3(0, -15, 0), Vector3(40, -20, 0), Vector3(40, -20, -10), Vector3(0, -15, -10)]
+
+[node name="F" type="Node2D" parent="." groups=["poly"]]
+position = Vector2(99, -15)
+script = ExtResource("3_ldcim")
+array = [Vector3(-51.83, -3.815, 0), Vector3(-52.54, -21.065, 0), Vector3(-38.665, -23.06, 0), Vector3(-48.64, -19.28, 0), Vector3(-39.09, -18.575, 0), Vector3(-48.245, -15.835, 0)]
+
+[node name="U" type="Node2D" parent="." groups=["poly"]]
+position = Vector2(115, -16)
+script = ExtResource("3_ldcim")
+array = [Vector3(-48, -3.815, 0), Vector3(-55.59, -21.065, 0), Vector3(-49.59, -12.09, 0), Vector3(-43, -19, 0)]
+
+[node name="C" type="Node2D" parent="." groups=["poly"]]
+position = Vector2(128, -15)
+script = ExtResource("3_ldcim")
+array = [Vector3(-59.05, -8.945, 0), Vector3(-49.535, -21.065, 0), Vector3(-53.83, -11.185, 0), Vector3(-43.875, -3.71, 0)]
+
+[node name="K" type="Node2D" parent="." groups=["poly"]]
+position = Vector2(142, -19)
+script = ExtResource("3_ldcim")
+array = [Vector3(-58.88, -21.065, 0), Vector3(-57.99, -1.35, 0), Vector3(-56.125, -9.34, 0), Vector3(-49.365, -1.875, 0), Vector3(-55.93, -14.545, 0), Vector3(-50.345, -21.765, 0), Vector3(-56.455, -16.6, 0)]
